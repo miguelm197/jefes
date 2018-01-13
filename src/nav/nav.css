@@ -1,0 +1,13 @@
+.menu-lateral{
+    /* background-color: gray;  */
+    position: fixed;
+    height: 50px;   
+    width:100%;
+    box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.11);
+    z-index: 1;
+}
+.menu-lateral li{
+    float: left;
+     list-style: none;
+     margin-left: 30px;
+}
