@@ -1,0 +1,8 @@
+.nuevoIntegranteCls .comboS span {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+.nuevoIntegranteCls .comboS ul {
+width: 100%;
+}

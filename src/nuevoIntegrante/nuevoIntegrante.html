@@ -1,0 +1,99 @@
+<div class="cont-home">
+    <div class="nuevoIntegranteCls">
+
+        <div class="container">
+            <!-- *******     TITULO     ********-->
+            <div class="row">
+                <h2>Nuevo Integrante</h2>
+            </div>
+            <!-- ***************************** -->
+
+            <hr>
+
+            <!-- *******     FORMULARIO     ********-->
+            <div class="row">
+                <form>
+                    <!-- NOMBRE -->
+                    <div class="col col-lg-6">
+                        <div class="form-group">
+                            <label lass="control-label">Nombre*</label>
+                            <input class="form-control" name="nom" placeholder="Nombre" ng-model="nuevoIntegrante.nombre" required>
+                        </div>
+                    </div>
+
+                    <!-- APELLIDO -->
+                    <div class="col col-lg-6">
+                        <div class="form-group">
+                            <label lass="control-label">Apellido*</label>
+                            <input class="form-control" name="ape" placeholder="Apellido" ng-model="nuevaUnidad.apellido" required>
+                        </div>
+                    </div>
+
+                    <!-- CI -->
+                    <div class="col col-lg-4">
+                        <div class="form-group">
+                            <label lass="control-label">CI*</label>
+                            <input class="form-control" name="ci" placeholder="CI" ng-model="nuevaUnidad.ci" required>
+                        </div>
+                    </div>
+
+                    <!-- SEXO -->
+                    <div class="col col-lg-4">
+                        <div class="form-group comboS">
+                            <label lass="control-label">Sexo</label>
+
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="true">
+                                    Sexo
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu " aria-labelledby="dropdownMenu1">
+                                    <li>
+                                        <a>Masculino</a>
+                                    </li>
+                                    <li>
+                                        <a>Femenino</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- FECHA NACIMIENTO -->
+                    <div class="col col-lg-4">
+                            <label lass="control-label">Fecha de Nacimiento</label>
+
+                        <div class="dropdown">
+                            <div class="dropdown">
+                                <a class="dropdown-toggle fechaInput date " role="button" data-toggle="dropdown">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-ng-model="data.dateDropDownInput">
+                                        <span class="input-group-addon">
+                                            <i class="glyphicon glyphicon-calendar"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <datetimepicker data-ng-model="data.dateDropDownInput" data-datetimepicker-config="{ dropdownSelector: '#dropdown2',startView:'day', 
+                            minView:'day', modelType: 'MM-DD-YYYY'}" />
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </form>
+            </div>
+            <!-- ***************************** -->
+
+        </div>
+
+    </div>
+</div>
+
+

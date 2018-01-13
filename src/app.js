@@ -24,6 +24,10 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'src/agregarIntegrante/agregarIntegrante.html',
             controller: 'agregarIntegranteCtrl'
         })
+        .when('/NuevoIntegrante', {
+            templateUrl: 'src/nuevoIntegrante/nuevoIntegrante.html',
+            controller: 'nuevoIntegranteCtrl'
+        })
 
         .otherwise({ redirectTo: "/home" });
 
