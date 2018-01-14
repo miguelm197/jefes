@@ -1,4 +1,4 @@
-app.factory("informacionEspecificaEventoFact", ["$http", function ($http) {
+app.factory("nuevoIntegranteFact", ["$http", function ($http) {
     var servicio = app.config.urlServicios;
     return {
     

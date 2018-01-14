@@ -1,4 +1,4 @@
-var app = angular.module("myApp", ['ngRoute', 'ngCookies', 'ui.grid', 'angular-md5', 'ui.bootstrap.datetimepicker', 'angular-carousel', 'ngTouch']);
+var app = angular.module("myApp", ['ngRoute', 'ngCookies', 'angular-md5', 'ngTouch']);
 
 /*ENRUTAMIENTO*/
 app.config(function ($routeProvider, $locationProvider) {
@@ -61,42 +61,6 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
         // }
     }
 
-
-    //Verifica cada vez que cambia la url (queda escuchando)
-    $rootScope.$on('$locationChangeStart', function (event, next, current) {
-
-        var loggedIn = $rootScope.globals ? $rootScope.globals.currentUser : false;
-        if (loggedIn) {
-            var rolUsuario = loggedIn.rolUsuario;
-
-            var paginasPublic = ['/nuevaTarea'];
-            var paginasAdmins = [];
-            var paginas = [""];
-
-            if (rolUsuario == "admin")
-                paginas = paginasAdmins;
-
-            if (rolUsuario == "public")
-                paginas = paginasPublic;
-
-            var pag = $location.path();
-            var restrictedPage = paginas.indexOf(pag) == -1 ? true : false;
-
-            if (!restrictedPage) {
-                $location.path('/home');
-            }
-
-        } else {
-            var paginas = ['/registro', '/login'];
-            var restrictedPage = $.inArray($location.path(), ) === -1;
-            var restrictedPage = paginas.indexOf($location.path()) != -1 ? true : false;
-
-            if (!restrictedPage) {
-                $location.path('/login');
-            }
-        }
-
-    });
 
 
 }]);

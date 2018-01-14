@@ -1,3 +1,3 @@
-app.controller("informacionEspecificaEventoCtrl", ["$scope", "informacionEspecificaEventoFact", function ($scope, informacionEspecificaEventoFact) {
+app.controller("nuevoIntegranteCtrl", ["$scope", "nuevoIntegranteFact", function ($scope, nuevoIntegranteFact) {
 
 }]);
