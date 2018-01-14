@@ -65,15 +65,20 @@
                     <div class="col col-lg-4">
                         <label lass="control-label">Fecha de Nacimiento</label>
 
-
-
-
-
-
-
-
-
-
+                        <div class="input-group date fnni">
+                            <input type="text" class="form-control">
+                            <span class="input-group-addon">
+                                <i class="glyphicon glyphicon-th"></i>
+                            </span>
+                            <script>
+                                $('.fnni').datepicker({
+                                    format: "dd/mm/yyyy",
+                                    startView: 2,
+                                    autoclose: true
+                                });
+                            </script>
+                        </div>
+                        
                     </div>
 
 
