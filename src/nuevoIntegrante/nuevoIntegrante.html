@@ -48,25 +48,31 @@
 
                         <!-- SEXO -->
                         <div class="col col-lg-4">
-                            <div class="form-group anchoLargoCombo">
-                                <label lass="control-label">Sexo</label>
 
-                                <div class="dropdown">
+                            <div class="form-group">
+                                <label lass="control-label">Sexo</label>
+                                <div class="dropdown miCombo">
                                     <button class="btn btn-default dropdown-toggle form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="true">
-                                        Sexo
+                                        <div ng-show="opcion">
+                                            {{opcion}}
+                                        </div>
+                                        <div ng-hide="opcion">
+                                            Sexo
+                                        </div>
                                         <span class="caret"></span>
                                     </button>
-                                    <ul class="dropdown-menu " aria-labelledby="dropdownMenu1">
-                                        <li>
-                                            <a>Masculino</a>
-                                        </li>
-                                        <li>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li ng-click="opcion='Femenino'">
                                             <a>Femenino</a>
+                                        </li>
+                                        <li ng-click="opcion='Masculino'">
+                                            <a>Masculino</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
+
                         </div>
 
 
@@ -94,31 +100,34 @@
 
                         <!-- RELACION CON EL JEFE -->
                         <div class="col col-lg-4">
-                            <div class="form-group anchoLargoCombo">
-                                <label lass="control-label">Relación con el jefe</label>
 
-                                <div class="dropdown">
+                            <div class="form-group">
+                                <label lass="control-label">Relación con el jefe</label>
+                                <div class="dropdown miCombo">
                                     <button class="btn btn-default dropdown-toggle form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="true">
-                                        Relación con el jefe
+                                        <div ng-show="opcion2">
+                                            {{opcion2}}
+                                        </div>
+                                        <div ng-hide="opcion2">
+                                            Relación con el Jefe
+                                        </div>
                                         <span class="caret"></span>
                                     </button>
-                                    <ul class="dropdown-menu " aria-labelledby="dropdownMenu1">
-                                        <li>
-                                            <a>Hijo/a</a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li ng-click="opcion2='Hermana/o'">
+                                            <a>Hermana/o</a>
                                         </li>
-                                        <li>
-                                            <a>Sobrino/a</a>
+                                        <li ng-click="opcion2='Sobrina/o'">
+                                            <a>Sobrina/o</a>
                                         </li>
-                                        <li>
-                                            <a>Primo/a</a>
-                                        </li>
-                                        <li>
-                                            <a>Otro/a</a>
+                                        <li ng-click="opcion2='Hija/o'">
+                                            <a>Hija/o</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
+
                         </div>
                     </div>
 

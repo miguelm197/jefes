@@ -39,15 +39,20 @@ a {
 }
 
 
-/* Ancho 100% de opciones del combo */
 
-
-/*.anchoLargoCombo span {
+/* Mueve la flechita del combo a la derecha */
+.miCombo span {
     position: absolute;
     right: 10px;
     top: 15px;
-} */
+}
 
-.anchoLargoCombo ul {
+/* Mueve el texto del combo a la izquierda */
+.miCombo button{
+    text-align: left;
+}
+
+/* Ancho 100% de opciones del combo */
+.miCombo ul {
     width: 100%;
 }

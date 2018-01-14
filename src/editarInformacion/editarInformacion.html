@@ -45,75 +45,86 @@
 
                         <!-- SEXO -->
                         <div class="col col-lg-12">
-                            <div class="form-group anchoLargoCombo">
-                                <label lass="control-label">Sexo</label>
 
-                                <div class="dropdown">
+                            <div class="form-group">
+                                <label lass="control-label">Sexo</label>
+                                <div class="dropdown miCombo">
                                     <button class="btn btn-default dropdown-toggle form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="true">
-                                        Sexo
+                                        <div ng-show="opcion">
+                                            {{opcion}}
+                                        </div>
+                                        <div ng-hide="opcion">
+                                            Sexo
+                                        </div>
                                         <span class="caret"></span>
                                     </button>
-                                    <ul class="dropdown-menu " aria-labelledby="dropdownMenu1">
-                                        <li>
-                                            <a>Masculino</a>
-                                        </li>
-                                        <li>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li ng-click="opcion='Femenino'">
                                             <a>Femenino</a>
+                                        </li>
+                                        <li ng-click="opcion='Masculino'">
+                                            <a>Masculino</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
+
                         </div>
 
                         <!-- FECHA NACIMIENTO -->
                         <div class="col col-lg-12">
-                            <label lass="control-label">Fecha de Nacimiento</label>
+                            <div class="form-group">
 
-                            <div class="input-group date fnni">
-                                <input type="text" class="form-control">
-                                <span class="input-group-addon">
-                                    <i class="glyphicon glyphicon-th"></i>
-                                </span>
-                                <script>
-                                    $('.fnni').datepicker({
-                                        format: "dd/mm/yyyy",
-                                        startView: 2,
-                                        autoclose: true
-                                    });
-                                </script>
+                                <label lass="control-label">Fecha de Nacimiento</label>
+
+                                <div class="input-group date fnni">
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-th"></i>
+                                    </span>
+                                    <script>
+                                        $('.fnni').datepicker({
+                                            format: "dd/mm/yyyy",
+                                            startView: 2,
+                                            autoclose: true
+                                        });
+                                    </script>
+                                </div>
                             </div>
 
                         </div>
 
                         <!-- RELACION CON EL JEFE -->
                         <div class="col col-lg-12">
-                            <div class="form-group anchoLargoCombo">
-                                <br>
-                                <label lass="control-label">Relación con el jefe</label>
 
-                                <div class="dropdown">
+                            <div class="form-group">
+                                <label lass="control-label">Relación con el jefe</label>
+                                <div class="dropdown miCombo">
                                     <button class="btn btn-default dropdown-toggle form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="true">
-                                        Relación con el jefe
+                                        <div ng-show="opcion2">
+                                            {{opcion2}}
+                                        </div>
+                                        <div ng-hide="opcion2">
+                                            Relación con el Jefe
+                                        </div>
                                         <span class="caret"></span>
                                     </button>
-                                    <ul class="dropdown-menu " aria-labelledby="dropdownMenu1">
-                                        <li>
-                                            <a>Hijo/a</a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li ng-click="opcion2='Hermana/o'">
+                                            <a>Hermana/o</a>
                                         </li>
-                                        <li>
-                                            <a>Sobrino/a</a>
+                                        <li ng-click="opcion2='Sobrina/o'">
+                                            <a>Sobrina/o</a>
                                         </li>
-                                        <li>
-                                            <a>Primo/a</a>
-                                        </li>
-                                        <li>
-                                            <a>Otro/a</a>
+                                        <li ng-click="opcion2='Hija/o'">
+                                            <a>Hija/o</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
+
                         </div>
 
                     </div>
@@ -179,25 +190,34 @@
                             <div class="row">
                                 <div class="col col-lg-12">
 
-                                    <div class="dropdown anchoLargoCombo">
-                                        <button class="btn btn-default dropdown-toggle form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="true">
-                                            Donde se ubica
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <li>
-                                                <a>Montevideo</a>
-                                            </li>
-                                            <li>
-                                                <a>Salto</a>
-                                            </li>
-                                            <li>
-                                                <a>Springfield</a>
-                                            </li>
+                                    <div class="form-group">
+                                        <label lass="control-label">Donde se ubica?</label>
+                                        <div class="dropdown miCombo">
+                                            <button class="btn btn-default dropdown-toggle form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="true">
+                                                <div ng-show="opcion3">
+                                                    {{opcion3}}
+                                                </div>
+                                                <div ng-hide="opcion3">
+                                                    Donde se ubica?
+                                                </div>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                <li ng-click="opcion3='Montevideo'">
+                                                    <a>Montevideo</a>
+                                                </li>
+                                                <li ng-click="opcion3='Salto'">
+                                                    <a>Salto</a>
+                                                </li>
+                                                <li ng-click="opcion3='Springfield'">
+                                                    <a>Springfield</a>
+                                                </li>
 
-                                        </ul>
+                                            </ul>
+                                        </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>

@@ -53,25 +53,34 @@
                 <div class="row">
                     <div class="col col-lg-6">
 
-                        <div class="dropdown anchoLargoCombo">
-                            <button class="btn btn-default dropdown-toggle form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="true">
-                                Donde se ubica
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li>
-                                    <a>Montevideo</a>
-                                </li>
-                                <li>
-                                    <a>Salto</a>
-                                </li>
-                                <li>
-                                    <a>Springfield</a>
-                                </li>
+                        <div class="form-group">
+                            <label lass="control-label">Donde se ubica?</label>
+                            <div class="dropdown miCombo">
+                                <button class="btn btn-default dropdown-toggle form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="true">
+                                    <div ng-show="opcion">
+                                        {{opcion}}
+                                    </div>
+                                    <div ng-hide="opcion">
+                                        Donde se ubica?
+                                    </div>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li ng-click="opcion='Montevideo'">
+                                        <a>Montevideo</a>
+                                    </li>
+                                    <li ng-click="opcion='Salto'">
+                                        <a>Salto</a>
+                                    </li>
+                                    <li ng-click="opcion='Springfield'">
+                                        <a>Springfield</a>
+                                    </li>
 
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
+
                     </div>
                 </div>
 
