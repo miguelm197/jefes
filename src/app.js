@@ -4,6 +4,10 @@ var app = angular.module("myApp", ['ngRoute', 'ngCookies', 'angular-md5', 'ngTou
 app.config(function ($routeProvider, $locationProvider) {
     $routeProvider
 
+        .when('/Login', {
+            templateUrl: 'src/login/login.html',
+            controller: 'loginCtrl'
+        })
         .when('/NuevaUnidad', {
             templateUrl: 'src/nuevaUnidad/nuevaUnidad.html',
             controller: 'nuevaUnidadCtrl'

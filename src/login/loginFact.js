@@ -1,4 +1,4 @@
-app.factory("FacLogin", ["$http", '$cookies', '$rootScope', function ($http, $cookies, $rootScope) {
+app.factory("loginFact", ["$http", '$cookies', '$rootScope', function ($http, $cookies, $rootScope) {
     var servicio = app.config.urlServicios;
     // Base64 encoding servicio usado por el AuthenticationService// ensucia los datos del usuario
     var Base64 = {
@@ -112,11 +112,9 @@ app.factory("FacLogin", ["$http", '$cookies', '$rootScope', function ($http, $co
             $rootScope.globals = false;
             $cookies.remove('globals');
             $http.defaults.headers.common.Authorization = 'Basic';
-        },
-
-        consultaClave: function (correo) {
-            return $http.get(servicio + "/usuarios/?correo=" + correo);
         }
+
+
     }
 
 }]);

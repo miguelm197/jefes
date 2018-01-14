@@ -1,11 +1,12 @@
 {
-  "name": "tareas",
+  "name": "jefaso",
   "author": {
     "email": "miguelmerelli.ll@gmail.com",
     "name": "Miguel",
     "url": "http://localhost:8080"
   },
   "dependencies": {
+    "alertifyjs": "^1.11.0",
     "angular": "^1.5.2",
     "angular-animate": "^1.5.2",
     "angular-aria": "^1.5.2",

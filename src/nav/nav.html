@@ -1,29 +1,69 @@
-<div class="conteiner menu-lateral" ng-controller="navCtrl">
-    <center>
-        <ul>
-            <li>
-                <a href="/#!/NuevaUnidad"> Nueva Unidad</a>
-            </li>
-            <li>
-                <a href="/#!/IdentificarJefe"> Identificar Jefe</a>
-            </li>
-            <li>
-                <a href="/#!/InformacionEspecificaEvento"> Informaciión específica evento</a>
-            </li>
-            <li>
-                <a href="/#!/InicioConJefeIntegrantes"> Inicio con Jefe e integrantes</a>
-            </li>
-            <li>
-                <a href="/#!/AgregarIntegrante"> Agregar Integrante</a>
-            </li>
-            <li>
-                <a href="/#!/NuevoIntegrante"> Nuevo Integrante</a>
-            </li>
-            <li>
-                <a href="/#!/EditarInformacion"> Editar información</a>
-            </li>
+<div class="panel-nav" ng-controller="navCtrl">
+    <div class="container-fluid">
+        <div class="row">
 
-        </ul>
+            <div class="col col-lg-10 menu">
+                <center>
+                    <ul>
+                        <li>
+                            <a href="/#!/NuevaUnidad"> Nueva Unidad</a>
+                        </li>
+                        <li>
+                            <a href="/#!/IdentificarJefe"> Identificar Jefe</a>
+                        </li>
+                        <li>
+                            <a href="/#!/InformacionEspecificaEvento"> Informaciión específica evento</a>
+                        </li>
+                        <li>
+                            <a href="/#!/InicioConJefeIntegrantes"> Inicio con Jefe e integrantes</a>
+                        </li>
+                        <li>
+                            <a href="/#!/AgregarIntegrante"> Agregar Integrante</a>
+                        </li>
+                        <li>
+                            <a href="/#!/NuevoIntegrante"> Nuevo Integrante</a>
+                        </li>
+                        <li>
+                            <a href="/#!/EditarInformacion"> Editar información</a>
+                        </li>
 
-    </center>
+                    </ul>
+
+                </center>
+            </div>
+
+            <div class="col col-lg-2">
+
+
+
+                <div class="form-group">
+                    <div class="dropdown usuario">
+                        <button type="button" class="menu-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            <span>Miguel Merelli</span>
+                            <span class="caret"></span>
+
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                            <li class="info">
+
+                                <!-- <span class="menu-title">MI PERFIL</span>
+                                <br> -->
+                                <span class="menu-title">MIGUEL MERELLI</span>
+                                <h6>admin</h6>
+                            </li>
+                            <div class="separador"></div>
+                            <li>
+                                <a ng-click="cerrarSesion()">Salir</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
 </div>
