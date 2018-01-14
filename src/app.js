@@ -28,6 +28,10 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'src/nuevoIntegrante/nuevoIntegrante.html',
             controller: 'nuevoIntegranteCtrl'
         })
+        .when('/EditarInformacion', {
+            templateUrl: 'src/editarInformacion/editarInformacion.html',
+            controller: 'editarInformacionCtrl'
+        })
 
         .otherwise({ redirectTo: "/home" });
 

@@ -1,23 +1,26 @@
 <div class="cont-home">
-    <div class="nuevoIntegranteCls">
+    <div class="editarInformacionCls">
 
         <div class="container">
             <!-- *******     TITULO     ********-->
             <div class="row">
-                <h2>Nuevo Integrante</h2>
+                <h2>Editar Información</h2>
             </div>
             <!-- ***************************** -->
 
             <hr>
 
-            <!-- *******     FORMULARIO     ********-->
+            <!-- *******     CUERPO     ********-->
             <div class="row">
-                <div class="col col-lg-10 col-lg-offset-1">
 
+                <!-- *******     FORMULARIO   IZQUIERDA  ********-->
+                <div class="col-lg-6">
+                    <h3>Personal</h3>
+                    <br>
                     <div class="row">
 
                         <!-- NOMBRE -->
-                        <div class="col col-lg-4">
+                        <div class="col col-lg-12">
                             <div class="form-group">
                                 <label lass="control-label">Nombre*</label>
                                 <input class="form-control" name="nom" placeholder="Nombre" ng-model="nuevoIntegrante.nombre" required>
@@ -25,7 +28,7 @@
                         </div>
 
                         <!-- APELLIDO -->
-                        <div class="col col-lg-4">
+                        <div class="col col-lg-12">
                             <div class="form-group">
                                 <label lass="control-label">Apellido*</label>
                                 <input class="form-control" name="ape" placeholder="Apellido" ng-model="nuevaUnidad.apellido" required>
@@ -33,21 +36,15 @@
                         </div>
 
                         <!-- CI -->
-                        <div class="col col-lg-4">
+                        <div class="col col-lg-12">
                             <div class="form-group">
                                 <label lass="control-label">CI*</label>
                                 <input class="form-control" name="ci" placeholder="CI" ng-model="nuevaUnidad.ci" required>
                             </div>
                         </div>
 
-                    </div>
-
-                    <hr>
-
-                    <div class="row">
-
                         <!-- SEXO -->
-                        <div class="col col-lg-4">
+                        <div class="col col-lg-12">
                             <div class="form-group anchoLargoCombo">
                                 <label lass="control-label">Sexo</label>
 
@@ -69,9 +66,8 @@
                             </div>
                         </div>
 
-
                         <!-- FECHA NACIMIENTO -->
-                        <div class="col col-lg-4">
+                        <div class="col col-lg-12">
                             <label lass="control-label">Fecha de Nacimiento</label>
 
                             <div class="input-group date fnni">
@@ -90,11 +86,10 @@
 
                         </div>
 
-
-
                         <!-- RELACION CON EL JEFE -->
-                        <div class="col col-lg-4">
+                        <div class="col col-lg-12">
                             <div class="form-group anchoLargoCombo">
+                                <br>
                                 <label lass="control-label">Relación con el jefe</label>
 
                                 <div class="dropdown">
@@ -120,32 +115,129 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
-                    <!-- ***************************** -->
+                </div>
+                <!-- ***************************** -->
 
-                    <hr>
-
-                    <!-- *******     ACEPTAR/CANCELAR     ********-->
+                <!-- *******     FORMULARIO   DERECHA  ********-->
+                <div class="col-lg-6">
+                    <h3>Evento</h3>
+                    <br>
                     <div class="row">
 
-                        <!-- Aceptar -->
-                        <div class="col col-lg-2 col-lg-offset-8">
-                            <button class="form-control btn btn-default ">Aceptar</button>
+                        <!-- DESPLAZADO -->
+                        <div class="col col-lg-12">
+                            <div class="row">
+
+                                <div class="col col-lg-6">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" id="inlineCheckbox1" value="option1"> Desplazado
+                                    </label>
+                                </div>
+                                <div class="col col-lg-6">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" id="inlineCheckbox2" value="option2"> No Desplazado
+                                    </label>
+                                </div>
+
+                            </div>
                         </div>
 
-                        <!-- Cancelar -->
-                        <div class="col col-lg-2">
-                            <button class="form-control btn btn-default">Cancelar</button>
+                        <br>
+                        <br>
+                        <br>
+
+                        <!-- EVACUADO -->
+                        <div class="col col-lg-12">
+                            <div class="row">
+
+                                <div class="col col-lg-6">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Evacuado
+                                    </label>
+                                </div>
+                                <div class="col col-lg-6">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> No Evacuado
+                                    </label>
+                                </div>
+
+                            </div>
                         </div>
+
+
+                        <br>
+                        <br>
+                        <br>
+
+
+                        <!-- DONDE SE UBICA -->
+                        <div class="col col-lg-12">
+
+                            <div class="row">
+                                <div class="col col-lg-12">
+
+                                    <div class="dropdown anchoLargoCombo">
+                                        <button class="btn btn-default dropdown-toggle form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="true">
+                                            Donde se ubica
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <li>
+                                                <a>Montevideo</a>
+                                            </li>
+                                            <li>
+                                                <a>Salto</a>
+                                            </li>
+                                            <li>
+                                                <a>Springfield</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
 
                     </div>
                     <!-- ***************************** -->
+
+
                 </div>
+
             </div>
             <!-- ***************************** -->
 
-        </div>
+            <hr>
 
+            <!-- *******     ACEPTAR/CANCELAR     ********-->
+            <div class="row">
+
+                <!-- Aceptar -->
+                <div class="col col-lg-2 col-lg-offset-8">
+                    <button class="form-control btn btn-default ">Aceptar</button>
+                </div>
+
+                <!-- Cancelar -->
+                <div class="col col-lg-2">
+                    <button class="form-control btn btn-default">Cancelar</button>
+                </div>
+
+            </div>
+            <!-- ***************************** -->
+
+
+
+
+
+
+        </div>
     </div>
-</div>

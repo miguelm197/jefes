@@ -1,4 +1,4 @@
-.cont-home{
+.cont-home {
     position: fixed;
     top: 50px;
     height: calc(100% - 50px);
@@ -6,28 +6,48 @@
     overflow: auto;
     z-index: 0;
 }
-.row{
+
+.row {
     width: 100%;
 }
+
 .resizableVertical {
     resize: vertical;
     overflow: auto;
 }
-a{
+
+a {
     cursor: pointer;
 }
-.panel-btn{
+
+.panel-btn {
     cursor: pointer;
-    transition:all 1s;
+    transition: all 1s;
 }
-.panel-btn:hover{
+
+.panel-btn:hover {
     cursor: pointer;
     background-color: rgb(247, 247, 247);
-    transition:all .5s;
+    transition: all .5s;
 }
-.separador{
+
+.separador {
     border-bottom: 1px solid gray;
     margin: 5px 0px;
     margin-top: -5px;
     margin-left: -10px;
+}
+
+
+/* Ancho 100% de opciones del combo */
+
+
+/*.anchoLargoCombo span {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+} */
+
+.anchoLargoCombo ul {
+    width: 100%;
 }
