@@ -45,30 +45,90 @@ app.config(function ($routeProvider, $locationProvider) {
 //Autenticacaion
 app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $location, $cookies, $http) {
 
+    // Configuración de URL de la API
     var urlServices = "http://localhost";
     var portServices = 3000;
 
     app.config['urlServicios'] = urlServices + ":" + portServices;
 
-    // mantenerse logueado luego de resfrescar la pagina
-    $rootScope.globals = $cookies.getObject('globals') || false;//Obtengo los valore de las cookies si hay
-    // console.log($rootScope.globals);
+    // Obtiene los datos almacenados en la cookie al cargar la pag
+    $rootScope.globals = $cookies.getObject('globals') || false;
 
-    // $rootScope.globals = $rootScope.globals ? $rootScope.globals.currentUser : false;
-
-
+    // =========================== CONFIGURACIÓN ===========================
+    //En caso de usar token configurar aqui:
     if ($rootScope.globals) {
         $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
-
-        //Verifica la primera vez que arranca la pag
-        // if ($rootScope.globals.currentUser.rolUsuario == "admin") {
-        //     $location.path('/listaTareas');
-        // }
-        // if ($rootScope.globals.currentUser.rolUsuario == "public") {
-        //     $location.path('/nuevaTarea');
-        // }
     }
+    // =====================================================================
+
+
+    // Verifica cada vez que cambia la url (queda escuchando)
+    $rootScope.$on('$locationChangeStart', function (event, next, current) {
+
+        // Almacena true en loggedIn si hay cookie en el navegador
+        var loggedIn = $rootScope.globals ? $rootScope.globals.currentUser : false;
+
+        // restrictedPage booleano que permite o no el acceso a la url actual.
+        var restrictedPage = false;
 
 
 
+
+        // =========================== CONFIGURACIÓN ===========================
+
+        var permisoPublico = false;  // Habilitar acceso público (sin estar logueado).
+        var permisoDiRoles = false;  // Habilitar manejo de varios roles (si se desactiva solo toma en cuenta usuario admin);
+
+        // Páginas en las cuales NO puede entrar el rol admin (se toma en cuenta una vez logueado).
+        // NOTA: En caso de que no se admitan manejo de varios roles, se asigna automaticamente el arreglo de noPaginasAdmins al usuario actual.
+        var noPaginasAdmins = ['/login'];   //Rol admin
+
+
+        // Páginas que puede entrar un usuario sin estar logueado
+        var paginas = [];
+
+
+        // Página a donde redirecciona si el usuario actual no posee permisos.
+        var paginaRedire = "/home";
+
+        // =====================================================================
+
+
+
+        if (loggedIn) {
+            var rolUsuario = loggedIn.rolUsuario;
+            var paginas = [];
+
+            if (permisoDiRoles) {
+                if (rolUsuario == "admin")
+                    paginas = noPaginasAdmins;
+
+                // =========================== CONFIGURACIÓN ===========================
+
+                // En caso de admitir varios roles, configurar aquí.
+                if (rolUsuario == "ejemplo")
+                    //Páginas en las cuales NO puede entrar el rol (se toma en cuenta una vez logueado).
+                    paginas = [];
+
+                // =====================================================================
+
+            } else {
+                paginas = noPaginasAdmins;
+            }
+
+            var pag = $location.path();
+            restrictedPage = paginas.indexOf(pag) == -1 ? true : false;
+
+        } else {
+            if (permisoPublico)
+                restrictedPage = paginas.indexOf($location.path()) != -1 ? true : false;
+        }
+
+        // Restringe o no la url actual
+        if (!restrictedPage) {
+            $location.path(paginaRedire);
+        }
+
+
+    });
 }]);
