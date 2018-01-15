@@ -45,9 +45,11 @@ app.config(function ($routeProvider, $locationProvider) {
 //Autenticacaion
 app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $location, $cookies, $http) {
 
+    // =========================== CONFIGURACIÓN ===========================
     // Configuración de URL de la API
     var urlServices = "http://localhost";
     var portServices = 3000;
+    // =====================================================================
 
     app.config['urlServicios'] = urlServices + ":" + portServices;
 
@@ -88,8 +90,11 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
         var paginas = [];
 
 
-        // Página a donde redirecciona si el usuario actual no posee permisos.
-        var paginaRedire = "/home";
+        // Página a donde redirecciona si el usuario actual (logueado) no posee permisos.
+        var paginaRedireSiLog = "/Home";
+
+        // Página a donde redirecciona si el usuario actual (NO logueado) no posee permisos.
+        var paginaRedireNoLog = "/Login";
 
         // =====================================================================
 
@@ -126,7 +131,10 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
 
         // Restringe o no la url actual
         if (!restrictedPage) {
-            $location.path(paginaRedire);
+            if (loggedIn)
+                $location.path(paginaRedireSiLog);
+            else
+                $location.path(paginaRedireNoLog);
         }
 
 
