@@ -23,52 +23,37 @@
 
             <!-- *******     TABLA     ********-->
             <div class="row">
-
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
-                            <th> Nombre
-                                <input class="form-control" name="nom" placeholder="Nombre" ng-model="identidadJefe.nombre" required>
-                            </th>
-                            <th> Apellido
-                                <input class="form-control" name="ape" placeholder="Apellido" ng-model="identidadJefe.apellido" required>
-                            </th>
-                            <th> Ci
-                                <input class="form-control" name="ci" placeholder="Ci" ng-model="identidadJefe.ci" required>
-                            </th>
-                            <th> Calle
-                                <input class="form-control" name="cal" placeholder="Calle" ng-model="identidadJefe.calle" required>
-                            </th>
-                            <th> Nro
-                                <input class="form-control" name="num" placeholder="Número" ng-model="identidadJefe.numero" required>
-                            </th>
+                            <tr>
+                                <th> Nombre
+                                    <input class="form-control" name="nom" placeholder="Nombre" ng-model="buscar.nombre" required>
+                                </th>
+                                <th> Apellido
+                                    <input class="form-control" name="ape" placeholder="Apellido" ng-model="buscar.apellido" required>
+                                </th>
+                                <th> Ci
+                                    <input class="form-control" name="ci" placeholder="Ci" ng-model="buscar.ci" required>
+                                </th>
+                                <th> Calle
+                                    <input class="form-control" name="cal" placeholder="Calle" ng-model="buscar.calle" required>
+                                </th>
+                                <th> Nro
+                                    <input class="form-control" name="num" placeholder="Número" ng-model="buscar.numero" required>
+                                </th>
+                            </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td> Jhon </td>
-                                <td> Salchichón </td>
-                                <td> 51641764 </td>
-                                <td> Av. Siempre Viva </td>
-                                <td> 742 </td>
-                            </tr>
-                            <tr>
-                                <td> Jhon </td>
-                                <td> Salchichón </td>
-                                <td> 51641764 </td>
-                                <td> Av. Siempre Viva </td>
-                                <td> 742 </td>
-                            </tr>
-                            <tr>
-                                <td> Jhon </td>
-                                <td> Salchichón </td>
-                                <td> 51641764 </td>
-                                <td> Av. Siempre Viva </td>
-                                <td> 742 </td>
+                            <tr ng-repeat="jefe in jefes | filter:buscar">
+                                <td> {{jefe.nombre}} </td>
+                                <td> {{jefe.apellido}} </td>
+                                <td> {{jefe.ci}} </td>
+                                <td> {{jefe.calle}} </td>
+                                <td> {{jefe.numero}} </td>
                             </tr>
                         </tbody>
                     </table>
-
-
                 </div>
             </div>
             <!-- ***************************** -->
@@ -95,6 +80,5 @@
         </div>
 
     </div>
-
-</div>
+    <br>
 </div>

@@ -4,7 +4,6 @@ app.factory("nuevaUnidadFact", ["$http", function ($http) {
     return {
         consultaJefes: function () {
             return $http.get(servicio + "/personas");
-
         },
         agregarUnidad: function (objeto) {
             return $http.post(servicio + "/personas", objeto);
