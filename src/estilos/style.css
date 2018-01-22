@@ -56,3 +56,8 @@ a {
 .miCombo ul {
     width: 100%;
 }
+
+
+.scroll{
+    overflow: auto;
+}

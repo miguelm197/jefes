@@ -2,129 +2,132 @@
     <div class="nuevaUnidadCls">
 
         <div class="container">
-            <!-- *******     TITULO     ********-->
-            <div class="row">
-                <h2>Nueva Unidad</h2>
-            </div>
-            <!-- ***************************** -->
+            <!-- *******     FORMULARIO     ********-->
 
-            <hr>
-
-            <!-- *******     MAPA     ********-->
-            <div class="row">
-                <div class="col col-lg-7">
-                    <div class="mapa">
-                        asd
-                    </div>
+            <form class="form" name="form">
+                <!-- *******     TITULO     ********-->
+                <div class="row">
+                    <h2>Nueva Unidad</h2>
                 </div>
-                <div class="col col-lg-5">
+                <!-- ***************************** -->
 
-                    <!-- *******     FORMULARIO     ********-->
+                <hr>
 
-                    <!-- <form class="form" name="form"> -->
-                    <div class="row">
-
-                        <!-- CI -->
-                        <div class="col col-lg-12">
-                            <div class="form-group">
-                                <label lass="control-label">CI*</label>
-                                <input class="form-control" name="ci" placeholder="CI" ng-model="nuevaUnidad.ci" required>
-                            </div>
-                        </div>
-
-                        <!-- NOMBRE -->
-                        <div class="col col-lg-12">
-                            <div class="form-group">
-                                <label lass="control-label">Nombre*</label>
-                                <input class="form-control" name="nom" placeholder="Nombre" ng-model="nuevaUnidad.nombre" required>
-                            </div>
-                        </div>
-
-                        <!-- APELLIDO -->
-                        <div class="col col-lg-12">
-                            <div class="form-group">
-                                <label lass="control-label">Apellido*</label>
-                                <input class="form-control" name="ape" placeholder="Apellido" ng-model="nuevaUnidad.apellido" required>
-                            </div>
-                        </div>
-
-                        <!-- CALLE -->
-                        <div class="col col-lg-6">
-                            <div class="form-group">
-                                <label lass="control-label">Calle*</label>
-                                <input class="form-control" name="cal" placeholder="Calle" ng-model="nuevaUnidad.calle" required>
-                            </div>
-                        </div>
-
-                        <!-- NUMERO -->
-                        <div class="col col-lg-6">
-                            <div class="form-group">
-                                <label lass="control-label">Número*</label>
-                                <input class="form-control" name="num" placeholder="Número" ng-model="nuevaUnidad.numero" required>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- </form> -->
-                </div>
-            </div>
-            <!-- ***************************** -->
-
-            <hr>
-
-            <!-- *******     NUEVO/BUSCAR     ********-->
-            <div class="row">
-                <div class="col col-lg-6">
-                    <div class="row">
-                        <div class="col col-lg-6">
-
-                            <button class="form-control btn btn-default ">Nuevo</button>
+                <!-- *******     MAPA     ********-->
+                <div class="row">
+                    <div class="col col-lg-7">
+                        <div class="mapa">
+                            asd
                         </div>
                     </div>
+                    <div class="col col-lg-5">
+
+                        <div class="row">
+
+                            <!-- CI -->
+                            <div class="col col-lg-12">
+                                <div class="form-group">
+                                    <label lass="control-label">CI*</label>
+                                    <input class="form-control" name="ci" placeholder="CI" ng-model="nuevaUnidad.ci" ng-change="validarCampos('')" ng- ng-class="validaciones.valCid" required>
+                                </div>
+                            </div>
+
+                            <!-- NOMBRE -->
+                            <div class="col col-lg-12">
+                                <div class="form-group">
+                                    <label lass="control-label">Nombre*</label>
+                                    <input class="form-control" name="nom" placeholder="Nombre" ng-model="nuevaUnidad.nombre" required>
+                                </div>
+                            </div>
+
+                            <!-- APELLIDO -->
+                            <div class="col col-lg-12">
+                                <div class="form-group">
+                                    <label lass="control-label">Apellido*</label>
+                                    <input class="form-control" name="ape" placeholder="Apellido" ng-model="nuevaUnidad.apellido" required>
+                                </div>
+                            </div>
+
+                            <!-- CALLE -->
+                            <div class="col col-lg-6">
+                                <div class="form-group">
+                                    <label lass="control-label">Calle*</label>
+                                    <input class="form-control" name="cal" placeholder="Calle" ng-model="nuevaUnidad.calle" ng-change="validarCampos('')"  ng-class="validaciones.valCal" required>
+                                </div>
+                            </div>
+
+                            <!-- NUMERO -->
+                            <div class="col col-lg-6">
+                                <div class="form-group">
+                                    <label lass="control-label">Número*</label>
+                                    <input class="form-control" name="num" placeholder="Número" ng-model="nuevaUnidad.numero"  ng-change="validarCampos('')" ng-class="validaciones.valNum" required>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- </form> -->
+                    </div>
                 </div>
+                <!-- ***************************** -->
 
-                <div class="col col-lg-6">
-                    <div class="row">
-                        <div class="col col-lg-6 col-lg-offset-6">
+                <hr>
 
-                            <button class="form-control btn btn-default">Buscar</button>
+                <!-- *******     NUEVO/BUSCAR     ********-->
+                <div class="row">
+                    <div class="col col-lg-6">
+                        <div class="row">
+                            <div class="col col-lg-6">
+                                <button class="form-control btn btn-default" ng-click="agregarJefe()" ng-disabled="{{controlInputs}}">Nuevo</button>
+                            </div>
+                            <div class="col col-lg-6">
+                                    <span ng-show="{{controlInputs}}" class="mensajeNuevo">Debe completar todos los campos que tienen (*)</span>
+                                </div>
+                        </div>
+                    </div>
 
+                    <div class="col col-lg-6">
+                        <div class="row">
+                            <div class="col col-lg-6 col-lg-offset-6">
+
+                                <button class="form-control btn btn-default">Buscar</button>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- ***************************** -->
+                <!-- ***************************** -->
 
-            <hr>
+                <hr>
 
-            <!-- *******     TABLA     ********-->
-            <div class="row">
+                <!-- *******     TABLA     ********-->
+                <div class="row">
+                    <div class="table-responsive">
+                        <table class="table table-striped scroll">
+                            <thead>
+                                <tr>
+                                    <th> Nombre </th>
+                                    <th> Apellido </th>
+                                    <th> Ci </th>
+                                    <th> Calle </th>
+                                    <th> Nro </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="jefe in jefes">
+                                    <td> {{jefe.nombre}} </td>
+                                    <td> {{jefe.apellido}} </td>
+                                    <td> {{jefe.ci}} </td>
+                                    <td> {{jefe.calle}} </td>
+                                    <td> {{jefe.numero}} </td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <thead>
-                            <th> Nombre </th>
-                            <th> Apellido </th>
-                            <th> Ci </th>
-                            <th> Calle </th>
-                            <th> Nro </th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td> - </td>
-                                <td> - </td>
-                                <td> - </td>
-                                <td> - </td>
-                                <td> - </td>
-                            </tr>
-                        </tbody>
-                    </table>
 
-
+                    </div>
                 </div>
-            </div>
-            <!-- ***************************** -->
-
+                <!-- ***************************** -->
+            </form>
         </div>
     </div>
 
