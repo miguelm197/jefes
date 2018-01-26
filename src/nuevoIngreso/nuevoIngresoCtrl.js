@@ -1,12 +1,12 @@
-app.controller("nuevaUnidadCtrl", ["$scope", "nuevaUnidadFact", function ($scope, nuevaUnidadFact) {
+app.controller("NuevoIngresoCtrl", ["$scope", "NuevoIngresoFact", function ($scope, NuevoIngresoFact) {
     $scope.jefes = [];
-    $scope.nuevaUnidad = {};
+    $scope.NuevoIngreso = {};
     $scope.validado = false;
     $scope.controlInputs = "form.ci.$error.required || form.nom.$error.required || form.ape.$error.required || form.cal.$error.required || form.num.$error.required || !validado"
 
     $scope.cargarjefes = function () {
 
-        nuevaUnidadFact.consultaJefes().then(function (data) {
+        NuevoIngresoFact.consultaJefes().then(function (data) {
             var personas = data.data;
             var jefes = [];
 
@@ -41,7 +41,7 @@ app.controller("nuevaUnidadCtrl", ["$scope", "nuevaUnidadFact", function ($scope
     $scope.validarCampos = function (tipo) {
 
         // VALIDA CI
-        if ($scope.nuevaUnidad.ci > 9000000 && $scope.nuevaUnidad.ci < 90000000) {
+        if ($scope.NuevoIngreso.ci > 9000000 && $scope.NuevoIngreso.ci < 90000000) {
             $scope.validaciones.valCid.error = !true;
         }
         else {
@@ -49,7 +49,7 @@ app.controller("nuevaUnidadCtrl", ["$scope", "nuevaUnidadFact", function ($scope
         }
 
         // VALIDA NUMERO
-        if ($scope.nuevaUnidad.numero > 99 && $scope.nuevaUnidad.numero < 10000 || $scope.nuevaUnidad.numero == undefined) {
+        if ($scope.NuevoIngreso.numero > 99 && $scope.NuevoIngreso.numero < 10000 || $scope.NuevoIngreso.numero == undefined) {
             $scope.validaciones.valNum.error = !true;
         }
         else {
@@ -60,9 +60,9 @@ app.controller("nuevaUnidadCtrl", ["$scope", "nuevaUnidadFact", function ($scope
         if (tipo != "nuevo") {
 
             // VALIDA EXISTENCIA CI
-            var ci = $scope.nuevaUnidad.ci;
+            var ci = $scope.NuevoIngreso.ci;
 
-            nuevaUnidadFact.existenciaCi(ci).then(function (res) {
+            NuevoIngresoFact.existenciaCi(ci).then(function (res) {
                 var personas = res.data;
 
                 if (personas.length > 0) {
@@ -75,10 +75,10 @@ app.controller("nuevaUnidadCtrl", ["$scope", "nuevaUnidadFact", function ($scope
 
 
             // VALIDA EXISTENCIA DIRECCIÓN
-            var calle = $scope.nuevaUnidad.calle;
-            var numer = $scope.nuevaUnidad.numero;
+            var calle = $scope.NuevoIngreso.calle;
+            var numer = $scope.NuevoIngreso.numero;
 
-            nuevaUnidadFact.existenciaDireccion(calle, numer).then(function (res) {
+            NuevoIngresoFact.existenciaDireccion(calle, numer).then(function (res) {
                 var personas = res.data;
 
                 console.log(personas)
@@ -121,12 +121,12 @@ app.controller("nuevaUnidadCtrl", ["$scope", "nuevaUnidadFact", function ($scope
 
         // validarCampos("nuevo");
 
-        $scope.nuevaUnidad.relacion = {
-            "jefe": $scope.nuevaUnidad.ci,
+        $scope.NuevoIngreso.relacion = {
+            "jefe": $scope.NuevoIngreso.ci,
             "comentario": "mismo"
         };
 
-        nuevaUnidadFact.agregarUnidad($scope.nuevaUnidad).then(function () {
+        NuevoIngresoFact.agregarUnidad($scope.NuevoIngreso).then(function () {
             $scope.cargarjefes();
         }, function error(err) {
             alert("Ah ocurrido un error");

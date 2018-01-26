@@ -7,13 +7,13 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'src/login/login.html',
             controller: 'loginCtrl'
         })
-        .when('/NuevaUnidad', {
-            templateUrl: 'src/nuevaUnidad/nuevaUnidad.html',
-            controller: 'nuevaUnidadCtrl'
+        .when('/NuevoIngreso', {
+            templateUrl: 'src/NuevoIngreso/NuevoIngreso.html',
+            controller: 'NuevoIngresoCtrl'
         })
-        .when('/IdentificarJefe', {
-            templateUrl: 'src/identificarJefe/identificarJefe.html',
-            controller: 'identificarJefeCtrl'
+        .when('/IdentificarAfectado', {
+            templateUrl: 'src/identificarAfectado/identificarAfectado.html',
+            controller: 'identificarAfectadoCtrl'
         })
         .when('/InformacionEspecificaEvento', {
             templateUrl: 'src/informacionEspecificaEvento/informacionEspecificaEvento.html',

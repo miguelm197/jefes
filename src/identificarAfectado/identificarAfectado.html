@@ -1,11 +1,11 @@
 <div class="cont-home">
-    <div class="identificarJefeCls">
+    <div class="identificarAfectadoCls">
 
         <div class="container">
 
             <!-- *******     TITULO     ********-->
             <div class="row">
-                <h2>Identificar Jefe</h2>
+                <h2>Identificar Afectado</h2>
             </div>
             <!-- ***************************** -->
 
@@ -24,9 +24,10 @@
             <!-- *******     TABLA     ********-->
             <div class="row">
                 <div class="table-responsive">
-                    <table class="table table-striped">
+                    <table class="table table-striped table-hover">
                         <thead>
                             <tr>
+                                <th> </th>
                                 <th> Nombre
                                     <input class="form-control" name="nom" placeholder="Nombre" ng-model="buscar.nombre" required>
                                 </th>
@@ -45,7 +46,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="jefe in jefes | filter:buscar">
+                            <tr ng-repeat="jefe in jefes | filter:buscar" ng-click="seleccion(jefe)">
+                                <td>
+                                    <input type="checkbox" ng-model="jefe.seleccionado">
+                                </td>
                                 <td> {{jefe.nombre}} </td>
                                 <td> {{jefe.apellido}} </td>
                                 <td> {{jefe.ci}} </td>

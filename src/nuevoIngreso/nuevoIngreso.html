@@ -1,5 +1,5 @@
 <div class="cont-home">
-    <div class="nuevaUnidadCls">
+    <div class="NuevoIngresoCls">
 
         <div class="container">
             <!-- *******     FORMULARIO     ********-->
@@ -7,7 +7,7 @@
             <form class="form" name="form">
                 <!-- *******     TITULO     ********-->
                 <div class="row">
-                    <h2>Nueva Unidad</h2>
+                    <h2>Nuevo ingreso</h2>
                 </div>
                 <!-- ***************************** -->
 
@@ -27,40 +27,40 @@
                             <!-- CI -->
                             <div class="col col-lg-12">
                                 <div class="form-group">
-                                    <label lass="control-label">CI*</label>
-                                    <input class="form-control" name="ci" placeholder="CI" ng-model="nuevaUnidad.ci" ng-change="validarCampos('')" ng- ng-class="validaciones.valCid" required>
+                                    <label lass="control-label">CI</label>
+                                    <input class="form-control" name="ci" placeholder="CI" ng-model="NuevoIngreso.ci" ng-change="validarCampos('')">
                                 </div>
                             </div>
 
                             <!-- NOMBRE -->
                             <div class="col col-lg-12">
                                 <div class="form-group">
-                                    <label lass="control-label">Nombre*</label>
-                                    <input class="form-control" name="nom" placeholder="Nombre" ng-model="nuevaUnidad.nombre" required>
+                                    <label lass="control-label">Nombre</label>
+                                    <input class="form-control" name="nom" placeholder="Nombre" ng-model="NuevoIngreso.nombre">
                                 </div>
                             </div>
 
                             <!-- APELLIDO -->
                             <div class="col col-lg-12">
                                 <div class="form-group">
-                                    <label lass="control-label">Apellido*</label>
-                                    <input class="form-control" name="ape" placeholder="Apellido" ng-model="nuevaUnidad.apellido" required>
+                                    <label lass="control-label">Apellido</label>
+                                    <input class="form-control" name="ape" placeholder="Apellido" ng-model="NuevoIngreso.apellido">
                                 </div>
                             </div>
 
                             <!-- CALLE -->
                             <div class="col col-lg-6">
                                 <div class="form-group">
-                                    <label lass="control-label">Calle*</label>
-                                    <input class="form-control" name="cal" placeholder="Calle" ng-model="nuevaUnidad.calle" ng-change="validarCampos('')"  ng-class="validaciones.valCal" required>
+                                    <label lass="control-label">Calle</label>
+                                    <input class="form-control" name="cal" placeholder="Calle" ng-model="NuevoIngreso.calle" ng-change="validarCampos('')">
                                 </div>
                             </div>
 
                             <!-- NUMERO -->
                             <div class="col col-lg-6">
                                 <div class="form-group">
-                                    <label lass="control-label">Número*</label>
-                                    <input class="form-control" name="num" placeholder="Número" ng-model="nuevaUnidad.numero"  ng-change="validarCampos('')" ng-class="validaciones.valNum" required>
+                                    <label lass="control-label">Número</label>
+                                    <input class="form-control" name="num" placeholder="Número" ng-model="NuevoIngreso.numero" ng-change="validarCampos('')">
                                 </div>
                             </div>
 
@@ -77,11 +77,11 @@
                     <div class="col col-lg-6">
                         <div class="row">
                             <div class="col col-lg-6">
-                                <button class="form-control btn btn-default" ng-click="agregarJefe()" ng-disabled="{{controlInputs}}">Nuevo</button>
+                                <button class="form-control btn btn-default" ng-click="agregarJefe()">Nuevo</button>
                             </div>
                             <div class="col col-lg-6">
-                                    <span ng-show="{{controlInputs}}" class="mensajeNuevo">Debe completar todos los campos que tienen (*)</span>
-                                </div>
+                                <span class="mensajeNuevo">Agregar un nuevo ingreso</span>
+                            </div>
                         </div>
                     </div>
 
@@ -89,7 +89,8 @@
                         <div class="row">
                             <div class="col col-lg-6 col-lg-offset-6">
 
-                                <button class="form-control btn btn-default">Buscar</button>
+                                <button class="form-control btn btn-default">
+                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar</button>
 
                             </div>
                         </div>

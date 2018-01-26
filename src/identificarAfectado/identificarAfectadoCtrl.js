@@ -1,10 +1,10 @@
-app.controller("identificarJefeCtrl", ["$scope", "identificarJefeFact", function ($scope, identificarJefeFact) {
+app.controller("identificarAfectadoCtrl", ["$scope", "identificarAfectadoFact", function ($scope, identificarAfectadoFact) {
     $scope.jefes = [];
 
 
     $scope.cargarjefes = function () {
 
-        identificarJefeFact.consultaJefes().then(function (data) {
+        identificarAfectadoFact.consultaJefes().then(function (data) {
             var personas = data.data;
             var jefes = [];
 
@@ -15,6 +15,8 @@ app.controller("identificarJefeCtrl", ["$scope", "identificarJefeFact", function
 
                 var ciJefe = pers.relacion.jefe;
                 var ciPers = pers.ci;
+
+                pers.seleccionado = false;
 
                 if (ciJefe == ciPers) {
                     jefes.push(pers);
@@ -29,5 +31,13 @@ app.controller("identificarJefeCtrl", ["$scope", "identificarJefeFact", function
     }
     $scope.cargarjefes();
 
+    $scope.seleccion = function (item) {
+        for (let i = 0; i < $scope.jefes.length; i++) {
+            const element = $scope.jefes[i];
+            element.seleccionado = false;
+        }
+
+        item.seleccionado = true;
+    }
 
 }]);
