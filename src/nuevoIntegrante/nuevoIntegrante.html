@@ -10,9 +10,11 @@
 
             <hr>
 
-            <!-- *******     FORMULARIO     ********-->
+            <!-- *******    PERSONA    ********-->
             <div class="row">
                 <div class="col col-lg-10 col-lg-offset-1">
+                    <h3>Persona</h3>
+                    <br>
 
                     <div class="row">
 
@@ -129,13 +131,83 @@
                             </div>
 
                         </div>
+                        <!-- ***************************** -->
                     </div>
 
-                    <!-- ***************************** -->
+
+                </div>
+            </div>
+            <!-- ***************************** -->
+
+
+            <hr>
+
+            <!-- *******    NUEVA UNIDAD    ********-->
+            <div class="row">
+                <div class="col col-lg-10 col-lg-offset-1">
+                    <h3>Nueva Unidad</h3>
+                    <br>
+
+
+                    <div class="row">
+
+                        <!-- CALLE -->
+                        <div class="col col-lg-4">
+                            <div class="form-group">
+                                <label lass="control-label">Calle*</label>
+                                <input class="form-control" name="cal" placeholder="Calle" ng-model="nuevoIntegrante.calle" required>
+                            </div>
+                        </div>
+
+                        <!-- NUMERO -->
+                        <div class="col col-lg-3">
+                            <div class="form-group">
+                                <label lass="control-label">Número*</label>
+                                <input class="form-control" name="num" placeholder="Número" ng-model="NuevoIngreso.numero" required>
+                            </div>
+                        </div>
+
+                        <!-- PADRÓN -->
+                        <div class="col col-lg-3">
+                            <div class="form-group">
+                                <label lass="control-label">Padrón*</label>
+                                <input class="form-control" name="pad" placeholder="Padrón" ng-model="NuevoIngreso.padron" required>
+                            </div>
+                        </div>
+
+                        <!-- NÚMERO UNIDAD -->
+                        <div class="col col-lg-2">
+                            <div class="form-group">
+                                <label lass="control-label">Nro. Unidad*</label>
+                                <input class="form-control" name="uni" placeholder="Nro. Unidad" ng-model="NuevoIngreso.unidad" required>
+                            </div>
+                        </div>
+
+                    </div>
 
                     <hr>
 
-                    <!-- *******     ACEPTAR/CANCELAR     ********-->
+                    <!-- MAPA -->
+                    <div class="row">
+                        <div class="col col-lg-12">
+                            <div class="mapa">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <!-- ***************************** -->
+
+            <hr>
+            <hr>
+
+            <!-- *******     ACEPTAR/CANCELAR     ********-->
+            <div class="row">
+                <div class="col col-lg-10 col-lg-offset-1">
+
                     <div class="row">
 
                         <!-- Aceptar -->
@@ -150,11 +222,18 @@
 
                     </div>
                     <!-- ***************************** -->
+
                 </div>
             </div>
             <!-- ***************************** -->
 
+
+            <br>
+            <br>
+            <br>
         </div>
+
+
 
     </div>
 </div>

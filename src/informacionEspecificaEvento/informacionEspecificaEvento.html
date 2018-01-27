@@ -9,41 +9,39 @@
 
         <hr>
 
+        <!-- *******     CONTENIDO     ********-->
         <div class="row">
             <div class="col col-lg-8 col-lg-offset-2">
+
                 <!-- *******     DESPLAZADO     ********-->
                 <div class="row">
-                    <div class="col col-lg-3">
-                        <label class="checkbox-inline">
-                            <input type="radio" id="inlineCheckbox1" value="option1" ng-click="desplazado=true"> Desplazado
+                    <div class="col col-lg-6">
+
+                        <label class="radio-inline">
+                            <input type="radio" name="opDesplazado" ng-click="desplazado=true"> Desplazado
                         </label>
-                    </div>
-                    <div class="col col-lg-3">
-                        <label class="checkbox-inline">
-                            <input type="radio" id="inlineCheckbox2" value="option2" ng-click="desplazado=false"> No Desplazado
+                        <label class="radio-inline">
+                            <input type="radio" name="opDesplazado" ng-click="desplazado=false"> No Desplazado
                         </label>
+
                     </div>
                 </div>
                 <!-- ***************************** -->
 
-                <hr>
-
+                <hr ng-show="desplazado">
+                
                 <!-- *******     EVACUADO     ********-->
                 <div class="row" ng-show="desplazado">
-                    <div class="col col-lg-3">
-
-
-                        <label class="radio-inline">
-                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Evacuado
-                        </label>
-                    </div>
-                    <div class="col col-lg-3">
+                    <div class="col col-lg-6">
 
                         <label class="radio-inline">
-                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> No Evacuado
+                            <input type="radio" name="opEvacuado"> Evacuado
                         </label>
-                    </div>
+                        <label class="radio-inline">
+                            <input type="radio" name="opEvacuado"> No Evacuado
+                        </label>
 
+                    </div>
                 </div>
                 <!-- ***************************** -->
 
@@ -80,15 +78,41 @@
                                 </ul>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
                 <!-- ***************************** -->
+
+
+
+                <!-- *******     CALLE Y NUMERO    ********-->
+                <div class="row">
+                    <br>
+                    <!-- CALLE -->
+                    <div class="col col-lg-6">
+                        <div class="form-group">
+                            <label lass="control-label">Calle</label>
+                            <input class="form-control" name="cal" placeholder="Calle" ng-model="NuevoIngreso.calle" ng-change="validarCampos('')">
+                        </div>
+                    </div>
+
+                    <!-- NUMERO -->
+                    <div class="col col-lg-6">
+                        <div class="form-group">
+                            <label lass="control-label">Número</label>
+                            <input class="form-control" name="num" placeholder="Número" ng-model="NuevoIngreso.numero" ng-change="validarCampos('')">
+                        </div>
+                    </div>
+                </div>
+                <!-- ***************************** -->
+
 
             </div>
         </div>
+        <!-- ***************************** -->
 
 
     </div>
+</div>
+
+
 </div>
