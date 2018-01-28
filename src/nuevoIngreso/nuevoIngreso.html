@@ -28,7 +28,7 @@
                             <div class="col col-lg-12">
                                 <div class="form-group">
                                     <label lass="control-label">CI</label>
-                                    <input class="form-control" name="ci" placeholder="CI" ng-model="NuevoIngreso.ci" ng-change="validarCampos('')">
+                                    <input class="form-control" name="ci" placeholder="CI" ng-model="busqueda.ci" >
                                 </div>
                             </div>
 
@@ -36,7 +36,7 @@
                             <div class="col col-lg-12">
                                 <div class="form-group">
                                     <label lass="control-label">Nombre</label>
-                                    <input class="form-control" name="nom" placeholder="Nombre" ng-model="NuevoIngreso.nombre">
+                                    <input class="form-control" name="nom" placeholder="Nombre" ng-model="busqueda.nombre">
                                 </div>
                             </div>
 
@@ -44,7 +44,7 @@
                             <div class="col col-lg-12">
                                 <div class="form-group">
                                     <label lass="control-label">Apellido</label>
-                                    <input class="form-control" name="ape" placeholder="Apellido" ng-model="NuevoIngreso.apellido">
+                                    <input class="form-control" name="ape" placeholder="Apellido" ng-model="busqueda.apellido">
                                 </div>
                             </div>
 
@@ -52,7 +52,7 @@
                             <div class="col col-lg-6">
                                 <div class="form-group">
                                     <label lass="control-label">Calle</label>
-                                    <input class="form-control" name="cal" placeholder="Calle" ng-model="NuevoIngreso.calle" ng-change="validarCampos('')">
+                                    <input class="form-control" name="cal" placeholder="Calle" ng-model="busqueda.calle" >
                                 </div>
                             </div>
 
@@ -60,7 +60,7 @@
                             <div class="col col-lg-6">
                                 <div class="form-group">
                                     <label lass="control-label">Número</label>
-                                    <input class="form-control" name="num" placeholder="Número" ng-model="NuevoIngreso.numero" ng-change="validarCampos('')">
+                                    <input class="form-control" name="num" placeholder="Número" ng-model="busqueda.numero" >
                                 </div>
                             </div>
 
@@ -89,7 +89,7 @@
                         <div class="row">
                             <div class="col col-lg-6 col-lg-offset-6">
 
-                                <button class="form-control btn btn-default">
+                                <button class="form-control btn btn-default"  ng-click="buscarJefe()">
                                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar</button>
 
                             </div>

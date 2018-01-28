@@ -5,9 +5,7 @@ app.factory("NuevoIngresoFact", ["$http", function ($http) {
         consultaJefes: function () {
             return $http.get(servicio + "/personas");
         },
-        agregarUnidad: function (objeto) {
-            return $http.post(servicio + "/personas", objeto);
-        },
+      
         existenciaCi: function (ci) {
             return $http.get(servicio + "/personas?ci=" + ci);
         },

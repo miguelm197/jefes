@@ -29,16 +29,16 @@
                 <!-- ***************************** -->
 
                 <hr ng-show="desplazado">
-                
+
                 <!-- *******     EVACUADO     ********-->
                 <div class="row" ng-show="desplazado">
                     <div class="col col-lg-6">
 
                         <label class="radio-inline">
-                            <input type="radio" name="opEvacuado"> Evacuado
+                            <input type="radio" name="opEvacuado" ng-click="evacuado=true"> Evacuado
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="opEvacuado"> No Evacuado
+                            <input type="radio" name="opEvacuado" ng-click="evacuado=false"> No Evacuado
                         </label>
 
                     </div>
@@ -91,7 +91,7 @@
                     <div class="col col-lg-6">
                         <div class="form-group">
                             <label lass="control-label">Calle</label>
-                            <input class="form-control" name="cal" placeholder="Calle" ng-model="NuevoIngreso.calle" ng-change="validarCampos('')">
+                            <input class="form-control" name="cal" placeholder="Calle" ng-model="evento.calle" ng-change="validarCampos('')">
                         </div>
                     </div>
 
@@ -99,7 +99,7 @@
                     <div class="col col-lg-6">
                         <div class="form-group">
                             <label lass="control-label">Número</label>
-                            <input class="form-control" name="num" placeholder="Número" ng-model="NuevoIngreso.numero" ng-change="validarCampos('')">
+                            <input class="form-control" name="num" placeholder="Número" ng-model="evento.numero" ng-change="validarCampos('')">
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,29 @@
             </div>
         </div>
         <!-- ***************************** -->
+        <hr>
+        <hr>
+        <!-- *******     ACEPTAR/CANCELAR     ********-->
+        <div class="row">
+            <div class="col col-lg-10 col-lg-offset-1">
 
+                <div class="row">
+
+                    <!-- Aceptar -->
+                    <div class="col col-lg-2 col-lg-offset-8">
+                        <button class="form-control btn btn-default" ng-click="agregarInfoEspe()">Aceptar</button>
+                    </div>
+
+                    <!-- Cancelar -->
+                    <div class="col col-lg-2">
+                        <button class="form-control btn btn-default">Cancelar</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- ***************************** -->
 
     </div>
 </div>

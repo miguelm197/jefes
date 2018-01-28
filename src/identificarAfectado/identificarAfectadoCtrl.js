@@ -1,5 +1,6 @@
-app.controller("identificarAfectadoCtrl", ["$scope", "identificarAfectadoFact", function ($scope, identificarAfectadoFact) {
+app.controller("identificarAfectadoCtrl", ["$scope", "$rootScope", "$location", "identificarAfectadoFact", function ($scope, $rootScope, $location, identificarAfectadoFact) {
     $scope.jefes = [];
+    var idAfectadoSeleccionado = "";
 
 
     $scope.cargarjefes = function () {
@@ -29,15 +30,32 @@ app.controller("identificarAfectadoCtrl", ["$scope", "identificarAfectadoFact", 
             alert("Ah ocurrido un error");
         });
     }
+
     $scope.cargarjefes();
 
     $scope.seleccion = function (item) {
+
         for (let i = 0; i < $scope.jefes.length; i++) {
             const element = $scope.jefes[i];
             element.seleccionado = false;
         }
+        ciAfectadoSeleccionado = "";
 
-        item.seleccionado = true;
+        if (ciAfectadoSeleccionado != item.ci) {
+            item.seleccionado = true;
+            ciAfectadoSeleccionado = item.ci;
+        }
+
     }
 
+    $scope.nuevaUnidadPersona = function () {
+        $rootScope.ciAfectadoSeleccionado = ciAfectadoSeleccionado;
+        $location.path("/NuevoIntegrante")
+    }
+
+    $scope.btnSiguiente = function () {
+        $rootScope.ciAfectadoSeleccionado = ciAfectadoSeleccionado;
+        $location.path("/InformacionEspecificaEvento")
+
+    }
 }]);

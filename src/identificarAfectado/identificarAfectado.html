@@ -29,24 +29,24 @@
                             <tr>
                                 <th> </th>
                                 <th> Nombre
-                                    <input class="form-control" name="nom" placeholder="Nombre" ng-model="buscar.nombre" required>
+                                    <input class="form-control" name="nom" placeholder="Nombre" ng-model="busqueda.nombre" required>
                                 </th>
                                 <th> Apellido
-                                    <input class="form-control" name="ape" placeholder="Apellido" ng-model="buscar.apellido" required>
+                                    <input class="form-control" name="ape" placeholder="Apellido" ng-model="busqueda.apellido" required>
                                 </th>
                                 <th> Ci
-                                    <input class="form-control" name="ci" placeholder="Ci" ng-model="buscar.ci" required>
+                                    <input class="form-control" name="ci" placeholder="Ci" ng-model="busqueda.ci" required>
                                 </th>
                                 <th> Calle
-                                    <input class="form-control" name="cal" placeholder="Calle" ng-model="buscar.calle" required>
+                                    <input class="form-control" name="cal" placeholder="Calle" ng-model="busqueda.calle" required>
                                 </th>
                                 <th> Nro
-                                    <input class="form-control" name="num" placeholder="Número" ng-model="buscar.numero" required>
+                                    <input class="form-control" name="num" placeholder="Número" ng-model="busqueda.numero" required>
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="jefe in jefes | filter:buscar" ng-click="seleccion(jefe)">
+                            <tr ng-repeat="jefe in jefes | filter:busqueda" ng-click="seleccion(jefe)">
                                 <td>
                                     <input type="checkbox" ng-model="jefe.seleccionado">
                                 </td>
@@ -63,18 +63,18 @@
             <!-- ***************************** -->
 
             <hr>
-
+            <hr>
+            
             <!-- *******     ACEPTAR/CANCELAR     ********-->
             <div class="row">
-
-                   <!-- Nueva unidad/persona -->
-                   <div class="col col-lg-3 col-lg-offset-5">
-                        <button class="form-control btn btn-default ">Nueva unidad/Persona</button>
-                    </div>
+                <!-- Nueva unidad/persona -->
+                <div class="col col-lg-3 col-lg-offset-5">
+                    <button class="form-control btn btn-default" ng-click="nuevaUnidadPersona()">Nueva unidad/Persona</button>
+                </div>
 
                 <!-- Aceptar -->
                 <div class="col col-lg-2">
-                    <button class="form-control btn btn-default ">Aceptar</button>
+                    <button class="form-control btn btn-default" ng-click="btnSiguiente()">Siguiente</button>
                 </div>
 
                 <!-- Cancelar -->

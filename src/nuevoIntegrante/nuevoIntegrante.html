@@ -22,7 +22,7 @@
                         <div class="col col-lg-4">
                             <div class="form-group">
                                 <label lass="control-label">Nombre*</label>
-                                <input class="form-control" name="nom" placeholder="Nombre" ng-model="nuevoIntegrante.nombre" required>
+                                <input class="form-control" name="nom" placeholder="Nombre" ng-model="busqueda.nombre" required>
                             </div>
                         </div>
 
@@ -30,7 +30,7 @@
                         <div class="col col-lg-4">
                             <div class="form-group">
                                 <label lass="control-label">Apellido*</label>
-                                <input class="form-control" name="ape" placeholder="Apellido" ng-model="NuevoIngreso.apellido" required>
+                                <input class="form-control" name="ape" placeholder="Apellido" ng-model="busqueda.apellido" required>
                             </div>
                         </div>
 
@@ -38,7 +38,7 @@
                         <div class="col col-lg-4">
                             <div class="form-group">
                                 <label lass="control-label">CI*</label>
-                                <input class="form-control" name="ci" placeholder="CI" ng-model="NuevoIngreso.ci" required>
+                                <input class="form-control" name="ci" placeholder="CI" ng-model="busqueda.ci" required>
                             </div>
                         </div>
 
@@ -83,7 +83,7 @@
                             <label lass="control-label">Fecha de Nacimiento</label>
 
                             <div class="input-group date fnni">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" ng-model="busqueda.nacimiento">
                                 <span class="input-group-addon">
                                     <i class="glyphicon glyphicon-th"></i>
                                 </span>
@@ -117,6 +117,9 @@
                                         <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li ng-click="opcion2='mismo'">
+                                            <a>mismo</a>
+                                        </li>
                                         <li ng-click="opcion2='Hermana/o'">
                                             <a>Hermana/o</a>
                                         </li>
@@ -155,7 +158,7 @@
                         <div class="col col-lg-4">
                             <div class="form-group">
                                 <label lass="control-label">Calle*</label>
-                                <input class="form-control" name="cal" placeholder="Calle" ng-model="nuevoIntegrante.calle" required>
+                                <input class="form-control" name="cal" placeholder="Calle" ng-model="busqueda.calle" required>
                             </div>
                         </div>
 
@@ -163,7 +166,7 @@
                         <div class="col col-lg-3">
                             <div class="form-group">
                                 <label lass="control-label">Número*</label>
-                                <input class="form-control" name="num" placeholder="Número" ng-model="NuevoIngreso.numero" required>
+                                <input class="form-control" name="num" placeholder="Número" ng-model="busqueda.numero" required>
                             </div>
                         </div>
 
@@ -171,7 +174,7 @@
                         <div class="col col-lg-3">
                             <div class="form-group">
                                 <label lass="control-label">Padrón*</label>
-                                <input class="form-control" name="pad" placeholder="Padrón" ng-model="NuevoIngreso.padron" required>
+                                <input class="form-control" name="pad" placeholder="Padrón" ng-model="busqueda.padron" required>
                             </div>
                         </div>
 
@@ -179,7 +182,7 @@
                         <div class="col col-lg-2">
                             <div class="form-group">
                                 <label lass="control-label">Nro. Unidad*</label>
-                                <input class="form-control" name="uni" placeholder="Nro. Unidad" ng-model="NuevoIngreso.unidad" required>
+                                <input class="form-control" name="uni" placeholder="Nro. Unidad" ng-model="busqueda.unidad" required>
                             </div>
                         </div>
 
@@ -212,7 +215,7 @@
 
                         <!-- Aceptar -->
                         <div class="col col-lg-2 col-lg-offset-8">
-                            <button class="form-control btn btn-default ">Aceptar</button>
+                            <button class="form-control btn btn-default" ng-click="agregarIntegrante()">Aceptar</button>
                         </div>
 
                         <!-- Cancelar -->
@@ -221,7 +224,6 @@
                         </div>
 
                     </div>
-                    <!-- ***************************** -->
 
                 </div>
             </div>
