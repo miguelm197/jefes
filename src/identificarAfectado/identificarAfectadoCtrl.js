@@ -48,14 +48,23 @@ app.controller("identificarAfectadoCtrl", ["$scope", "$rootScope", "$location", 
 
     }
 
-    $scope.nuevaUnidadPersona = function () {
-        $rootScope.ciAfectadoSeleccionado = ciAfectadoSeleccionado;
-        $location.path("/NuevoIntegrante")
+    $scope.btnNevaUnidadPersona = function () {
+        try {
+            // $rootScope.ciAfectadoSeleccionado = ciAfectadoSeleccionado;
+            $location.path("/NuevoIntegrante")
+        } catch (error) {
+            $location.path("/NuevoIntegrante")
+        }
     }
 
     $scope.btnSiguiente = function () {
         $rootScope.ciAfectadoSeleccionado = ciAfectadoSeleccionado;
         $location.path("/InformacionEspecificaEvento")
+
+    }
+
+
+    $scope.lnkNuevoIntegranteFamilia = function () {
 
     }
 }]);

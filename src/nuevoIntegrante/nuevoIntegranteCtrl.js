@@ -7,9 +7,16 @@ app.controller("nuevoIntegranteCtrl", ["$scope", "$rootScope", "nuevoIntegranteF
 
         integrante = $scope.busqueda;
         integrante.sexo = sexo;
-        integrante.relacion = relacion;
 
-        nuevoIntegranteFact.agregarIntegrante(integrante).then(function(){
+        if (relacion == "mismo") {
+            integrante.relacion = {
+                "jefe": $scope.busqueda.ci,
+                "desc": relacion
+            }
+        }
+
+
+        nuevoIntegranteFact.agregarIntegrante(integrante).then(function () {
             alert("Se agregó correctamente")
         })
 
